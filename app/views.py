@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from app.form import ContactForm
-from app.models import Home, SocialNetwork, About, Skills, Experience, Services, Portfolio, Blog
+from app.models import Home, SocialNetwork, About, Skills, Experience, Services, Portfolio, Blog, ForPdf
 
 
 def master(table):
@@ -17,6 +17,8 @@ def index_view(request):
     services = master(Services)
     portfolio = master(Portfolio)
     blogs = master(Blog)
+    pdf = master(ForPdf)
+
 
     if request.method == "POST":
         form = ContactForm(data=request.POST)
@@ -35,4 +37,5 @@ def index_view(request):
                            "services": services,
                            "portfolio": portfolio,
                            "blogs": blogs,
-                           "form": form})
+                           "form": form,
+                           "pdf":pdf})

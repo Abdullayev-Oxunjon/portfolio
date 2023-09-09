@@ -111,12 +111,13 @@
                             <p class="pe-lg-5">{{ home.text }}</p>
                             <div class="btn-bar">
 
-
-                                <a href="{% static 'assets/img/oxunjon_portfolio.pdf' %}" id="down" download/>
+                                {% for i in pdf %}
+                                <a href="{{ i.url }}" id="down" download/>
                                 <button class="px-btn px-btn-theme"
                                         onclick="document.getElementById('down').clisk()">Download CV
                                 </button>
                                 </a>
+                                    {% endfor %}
 
 
                             </div>
