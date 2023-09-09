@@ -109,6 +109,7 @@
                                                             alt=""></span>{{ home.last_name }}</h1>
                             <h2>I'm a <span id="type-it"></span></h2>
                             <p class="pe-lg-5">{{ home.text }}</p>
+                            {% endfor %}
                             <div class="btn-bar">
                                 <a href="{% static 'assets/img/oxunjon_portfolio.pdf' %}" id="down" download/>
 
@@ -122,6 +123,7 @@
 
                         </div>
                     </div>
+        {% for home in homes %}
                     <div class="col-lg-6">
                         <div class="home-image text-center">
                             <div class="hi-icon-top">
