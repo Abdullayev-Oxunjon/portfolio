@@ -105,8 +105,3 @@ class Contact(models.Model):
         return self.name
 
 
-class ForPdf(models.Model):
-    url = models.FileField(upload_to="pdf/")
-
-    def __str__(self):
-        return self.url
