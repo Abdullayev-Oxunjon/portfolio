@@ -29,12 +29,12 @@
 <header class="main-header d-lg-none">
     <div class="container">
         <!-- Brand -->
-        {#            <div class="logo">#}
-        {#                <a class="navbar-brand" href="#">#}
-        {#                    <img class="logo-dark" title="" alt="" src="{% static "assets/img/main_logo.png" %}">#}
-        {#                    <img class="logo-light" title="" alt="" src="{% static "assets/img/main_logo.png" %}">#}
-        {#                </a>#}
-        {#            </div>#}
+        <div class="logo">
+            <a class="navbar-brand" href="#">
+                <img class="logo-dark" title="" alt="" src="{% static "assets/img/logo.svg" %}">
+                <img class="logo-light" title="" alt="" src="{% static "assets/img/logo-light.svg" %}">
+            </a>
+        </div>
         <div class="ms-auto">
             <button class="toggler-menu">
                 <span></span>
@@ -47,8 +47,8 @@
     <!-- Brand -->
     <div class="logo">
         <a class="navbar-brand" href="#">
-            <img class="logo-dark" title="" alt="" src="{% static "assets/img/main_logo.png" %}">
-            <img class="logo-light" title="" alt="" src="{% static "assets/img/main_logo.png" %}">
+            <img class="logo-dark" title="" alt="" src="{% static "assets/img/logo.svg" %}">
+            <img class="logo-light" title="" alt="" src="{% static "assets/img/logo-light.svg" %}">
         </a>
     </div>
     <!-- / -->
@@ -104,15 +104,24 @@
                 <div class="row align-items-center min-vh-100 flex-row-reverse">
                     <div class="col-lg-6 ps-xl-5 mb-5 mb-lg-0">
                         <div class="home-intro">
-                            <h6>👋 Hi, I’ m</h6>
+                            <h6>👋 Salom, Men </h6>
                             <h1> {{ home.name }} <span><img src="{{ home.image_icon.url }}" title=""
                                                             alt=""></span>{{ home.last_name }}</h1>
-                            <h2>I'm a <span id="type-it"></span></h2>
+                            <h2>Men <span id="type-it"></span></h2>
                             <p class="pe-lg-5">{{ home.text }}</p>
+                            {#                            <a class="px-btn px-btn-theme" href="#contactus">Download cv <i class="bi-download"></i>#}
+
+                            <br>
+                            <a href="{% static 'assets/img/oxunjon_portfolio.pdf' %}" id="down" download/>
+                            <button class="px-btn px-btn-theme"
+                                    onclick="document.getElementById('down').clisk()">Download CV
+                           <i class="bi-download"></i> </button>
+                            </a>
+
+
+                            </a>
+
                             <div class="btn-bar">
-
-
-
 
 
                             </div>
@@ -136,7 +145,7 @@
                                           fill="var(--px-theme)"/>
                                 </svg>
                             </div>
-                            <img style="height: 700px;" src="{{ home.image.url }}" title="" alt="">
+                            <img style="height: 670px;" src="{{ home.image.url }}" title="" alt="">
                         </div>
                     </div>
                 </div>
@@ -155,20 +164,20 @@
                         </div>
                         {% for about in abouts %}
                             <div class="about-me-text pb-5">
-                                <h3>My Name Is {{ about.name }}</h3>
-                                <h5><span>I Am </span>{{ about.job }}</h5>
+                                <h3>Mening ismim {{ about.name }}</h3>
+                                <h5><span>mEN </span>{{ about.job }}</h5>
                                 <p>{{ about.text }}</p>
                                 <div class="row pt-2">
                                     <div class="col-auto">
                                         <div class="a-count">
                                             <span class="count">{{ about.project_count }}</span>
-                                            <div class="a-count-text">Projects <br>Completed.</div>
+                                            <div class="a-count-text">Bajarilgan <br>Loyihalar.</div>
                                         </div>
                                     </div>
                                     <div class="col-auto">
                                         <div class="a-count">
                                             <span class="count">{{ about.client }}</span>
-                                            <div class="a-count-text">Satisfied <br>Clients.</div>
+                                            <div class="a-count-text">Xursand <br>Mijozlar.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +273,7 @@
                 {% for services in services %}
 
                     <div class="col-sm-6 col-lg-4">
-                        <div class="feature-box-01" style="height: 370px;!important;">
+                        <div class="feature-box-01" style="height: 400px;!important;">
                             <div class="icon"><img src="{{ services.image.url }}" alt=""></div>
                             <div class="feature-content">
                                 <h5>{{ services.title }}</h5>
@@ -354,7 +363,7 @@
                 <div class="col-lg-5 d-flex">
                     <div class="d-flex flex-column w-100">
                         <div class="contact-info">
-                            <h3>Let’s Discuss Your Project</h3>
+                            <h3>Loyihani muhokama qilaylik !</h3>
                             <ul>
                                 <li>
                                     <div class="icon">
@@ -362,8 +371,8 @@
                                     </div>
                                     <div class="text">
                                         <label>Chat to us</label>
-                                        <p>I am ready to help you. <span><a class="text-reset"
-                                                                            href="mailto:info@domainname.com">oxunjoncoder@gmail.com</a></span>
+                                        <p>Men sizga yordam berishga tayyorman. <span><a class="text-reset"
+                                                                                         href="mailto:info@domainname.com">oxunjoncoder@gmail.com</a></span>
                                         </p>
                                     </div>
                                 </li>
@@ -374,7 +383,7 @@
                                     </div>
                                     <div class="text">
                                         <label>Visit us</label>
-                                        <p> Come say hello to my address.<span>Uzbekistan <br>Karshi City</span></p>
+                                        <p> Mening manzilimga salom ayting.<span>Uzbekistan <br>Karshi City</span></p>
                                     </div>
                                 </li>
 
@@ -384,7 +393,10 @@
                                     </div>
                                     <div class="text">
                                         <label>Call me</label>
-                                        <p>Mon-Sun from 6am to 11pm. <span>+998 91 226 61 62</span></p>
+                                        <p>Dushanbadan yakshanba kuni soat 6:00 dan 23:00
+                                            gacha.<span>+998 91 226 61 62</span></p>
+                                            <span>+998 91 453 74 84</span></p>
+
                                     </div>
                                 </li>
                             </ul>
@@ -393,14 +405,22 @@
 
 
 
+
+                             <div class="google-map mt-5">
+                                <div class="ratio ratio-21x9">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3151.840107317064!2d65.7717317!3d38.8348368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ea94c5b89b971%3A0x7a6f0e607f439233!2sIT+CITY+ACADEMY!5e0!3m2!1sen!2s!4v1631865585012" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 ps-xl-5">
                     <div class="contact-form">
                         <div class="contact-head">
-                            <h4>Do you have any ideas? I have skills. Let's unite.</h4>
-                            <p>Tell us more about yourself and what you're got in mind.</p>
+                            <h4>Sizda biron bir fikr bormi? Menda mahorat bor. Keling, birlashaylik.</h4>
+                            <p>O'zingiz va nimani nazarda tutayotganingiz haqida ko'proq gapiring.</p>
                         </div>
                         <form id="contact-form" action="{% url 'index' %}" method="POST">
                             {% csrf_token %}

@@ -735,7 +735,8 @@ a {
   position: absolute;
   bottom: -40px;
   left: -50px;
-  width: 90px;
+  /*width: 200px;*/
+  /*height: 500px;*/
   display: inline-block;
 }
 .home-section .home-image img {
