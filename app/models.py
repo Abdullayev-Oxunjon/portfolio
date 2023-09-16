@@ -74,7 +74,7 @@ class Blog(BaseModel):
     def __str__(self):
         return self.title
 
-
+# bo'ldi
 class Portfolio(models.Model):
     image = models.ImageField(upload_to="services/")
     title = models.CharField(max_length=155)
